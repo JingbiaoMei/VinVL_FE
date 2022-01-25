@@ -12,6 +12,10 @@ dist/
 *.pkl
 *.npy
 
+*.tsv
+*.jpg
+*.png
+
 # ipython/jupyter notebooks
 *.ipynb
 **/.ipynb_checkpoints/
@@ -31,7 +35,10 @@ dist/
 # MacOS
 .DS_Store
 
+
+
 # project dirs
+/data
 /datasets
 /models
 /output
