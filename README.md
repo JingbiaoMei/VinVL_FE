@@ -207,6 +207,12 @@ To extract relation features (union bounding box's feature), in yaml file, set `
 To extract bounding box features, in yaml file, set `TEST.OUTPUT_FEATURE` to  `True`, add `feature` in `TEST.TSV_SAVE_SUBSET`.
 
 
+
+USEAGE:
+
+python tools/test_sg_net.py --config-file sgg_configs/vgattr/vinvl_x152c4_HM.yaml
+
+
 ## Troubleshooting
 If you have issues running or compiling this code, we have compiled a list of common issues in
 [TROUBLESHOOTING.md](TROUBLESHOOTING.md). If your issue is not present there, please feel

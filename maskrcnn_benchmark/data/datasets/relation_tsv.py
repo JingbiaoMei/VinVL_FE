@@ -34,6 +34,7 @@ class RelationTSVDataset(TSVYamlDataset):
         
         # construct maps
         jsondict_file = find_file_path_in_yaml(self.cfg.get("labelmap", self.cfg.get("jsondict", None)), self.root) # previous version use jsondict
+        print(jsondict_file)
         jsondict = json.load(open(jsondict_file, 'r'))
 
         self.labelmap = {}
