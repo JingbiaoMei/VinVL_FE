@@ -206,8 +206,8 @@ def convert_predictions_to_tsv(predictions, dataset, output_folder,
                             cur_d['relation_feature'] = base64.b64encode(relation_features[i]).decode('utf-8')
                     triplets.append(cur_d)
             
-            yield image_key, json.dumps({'objects': objects, 'relations':triplets})
-    
+            #yield image_key, json.dumps({'objects': objects, 'relations':triplets})
+            yield image_key, image_height, image_width, labels, scores, attr_labels, attr_scores, len(boxes), boxes, features
     tsv_writer(gen_rows(), os.path.join(output_folder, output_tsv_name))
 
 
