@@ -53,6 +53,7 @@ TEST:
     TSV_SAVE_SUBSET: ['rect', 'class', 'conf', 'feature']
     GATHER_ON_CPU: True
     IGNORE_BOX_REGRESSION: True
-OUTPUT_DIR: "./output/X152C5_test"
+    OUTPUT_FEATURE: True
+OUTPUT_DIR: "./output/X152C5_testcase"
 DATA_DIR: "./data/img/test"
 DISTRIBUTED_BACKEND: 'gloo'
