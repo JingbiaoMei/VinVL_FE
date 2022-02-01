@@ -50,7 +50,7 @@ TEST:
     SKIP_PERFORMANCE_EVAL: True
     SAVE_PREDICTIONS: True
     SAVE_RESULTS_TO_TSV: True
-    TSV_SAVE_SUBSET: ['rect', 'class', 'conf', 'feature']
+    TSV_SAVE_SUBSET: ['rect', 'class', 'conf', 'feature', 'attr_scores', 'attr_labels']
     GATHER_ON_CPU: True
     IGNORE_BOX_REGRESSION: True
     OUTPUT_FEATURE: True
