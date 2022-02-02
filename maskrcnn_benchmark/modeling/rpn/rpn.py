@@ -194,6 +194,7 @@ class RPNModule(torch.nn.Module):
                 box.get_field("objectness").sort(descending=True)[1] for box in boxes
             ]
             boxes = [box[ind] for box, ind in zip(boxes, inds)]
+            # this corresponds to the proposals, proposal_losses in generalized_rcnn.py 
         return boxes, {}
 
 

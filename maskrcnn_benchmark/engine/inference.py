@@ -6,7 +6,7 @@ import time
 import os
 import json
 import base64
-
+import numpy as np
 import torch
 from tqdm import tqdm
 
@@ -206,8 +206,18 @@ def convert_predictions_to_tsv(predictions, dataset, output_folder,
                             cur_d['relation_feature'] = base64.b64encode(relation_features[i]).decode('utf-8')
                     triplets.append(cur_d)
             
+            #LXMERT Style
+            objects_id = base64.b64encode(np.array(labels)).decode()
+            object_conf = base64.b64encode(np.array(scores)).decode()
+            attrs_id = base64.b64encode(np.array(attr_labels)).decode()
+            attrs_conf = base64.b64encode(np.array(attr_scores)).decode()
+            num_boxes = len(boxes)
+            boxes = base64.b64encode(np.array(boxes)).decode()
+            features = base64.b64encode(np.array(features)).decode()
+
+
             #yield image_key, json.dumps({'objects': objects, 'relations':triplets})
-            yield image_key, image_height, image_width, labels, scores, attr_labels, attr_scores, len(boxes), boxes, base64.b64encode(features)
+            yield image_key, image_height, image_width, objects_id, object_conf, attrs_id, attrs_conf, num_boxes, boxes, features
     tsv_writer(gen_rows(), os.path.join(output_folder, output_tsv_name))
 
 
