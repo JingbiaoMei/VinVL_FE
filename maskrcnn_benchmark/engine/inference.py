@@ -210,9 +210,9 @@ def convert_predictions_to_tsv(predictions, dataset, output_folder,
             objects_id = base64.b64encode(np.array(labels)).decode()
             
             object_conf = base64.b64encode(np.array(scores, dtype=np.float32)).decode()
-            print(len(scores))
+            '''print(len(scores))
             print(np.array(scores).shape, np.array(boxes).shape, np.array(scores).dtype )
-            print(type(scores), type(scores[0]),)
+            print(type(scores), type(scores[0]),)'''
             attrs_id = base64.b64encode(np.array(attr_labels)).decode()
             attrs_conf = base64.b64encode(np.array(attr_scores, dtype=np.float32)).decode()
             num_boxes = len(boxes)
