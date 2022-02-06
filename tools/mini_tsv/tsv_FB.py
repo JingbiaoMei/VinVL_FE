@@ -14,10 +14,10 @@ from maskrcnn_benchmark.data.datasets.utils.image_ops import img_from_base64
 # To generate a tsv file:
 data_path = "tools/mini_tsv/img_FB/"
 img_list = os.listdir(data_path)
-tsv_file = "tools/mini_tsv/data_FB/FB.tsv"
-label_file = "tools/mini_tsv/data_FB/FB.label.tsv"
-hw_file = "tools/mini_tsv/data_FB/FB.hw.tsv"
-linelist_file = "tools/mini_tsv/data_FB/FB.linelist.tsv"
+tsv_file = "tools/mini_tsv/data_FB/test.tsv"
+label_file = "tools/mini_tsv/data_FB/test.label.tsv"
+hw_file = "tools/mini_tsv/data_FB/test.hw.tsv"
+linelist_file = "tools/mini_tsv/data_FB/test.linelist.tsv"
 
 rows = []
 rows_label = []
@@ -34,15 +34,15 @@ for index, img_p in enumerate(img_list):
     # given by each dataset. The label is a list of dictionary 
     # where each box with at least "rect" (xyxy mode) and "class"
     # fields. It can have any other fields given by the dataset.
-    #labels = []
-    #labels.append({"rect": [1, 1, 30, 40], "class": "Dog"})
+    labels = []
+    labels.append({"rect": [1, 1, 30, 40], "class": "Dog"})
     #labels.append({"rect": [2, 3, 100, 100], "class": "Cat"})
 
     row = [img_key, img_encoded_str]
     rows.append(row)
 
-    #row_label = [img_key, json.dumps(labels)]
-    #rows_label.append(row_label)
+    row_label = [img_key, json.dumps(labels)]
+    rows_label.append(row_label)
 
     height = img.shape[0]
     width = img.shape[1]
@@ -54,11 +54,11 @@ finish = time.time()
 print("Time taken to load images:", finish-start)
 print("All iamge loaded, started to write tsv")
 tsv_writer(rows, tsv_file)
-#tsv_writer(rows_label, label_file)
+tsv_writer(rows_label, label_file)
 tsv_writer(rows_hw, hw_file)
 
 # generate linelist file
-#generate_linelist_file(label_file, save_file=linelist_file)
+generate_linelist_file(label_file, save_file=linelist_file)
 
 '''
 # To access a tsv file:

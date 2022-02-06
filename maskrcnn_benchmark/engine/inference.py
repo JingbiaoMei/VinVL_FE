@@ -80,7 +80,7 @@ def _accumulate_predictions_from_multiple_gpus(predictions_per_gpu, gather_on_cp
 def convert_predictions_to_tsv(predictions, dataset, output_folder,
                                data_subset, labelmap_file=None,
                                relation_on=False,
-                               output_tsv_name='predictions.tsv'):
+                               output_tsv_name='predictions.tsv', attr=True):
     # convert the prediction results to tsv format and save
     # for easier visualization and post-processing.
     if 'class' in data_subset:
@@ -110,7 +110,7 @@ def convert_predictions_to_tsv(predictions, dataset, output_folder,
         else:
             raise ValueError("relation labelmap is required, but was not provided")
     
-    def gen_rows():
+    def gen_rows(attr):
         for idx, prediction in sorted(predictions.items()):
             image_key = dataset.get_img_key(idx)
             image_width = dataset.get_img_info(idx)['width']
@@ -213,16 +213,21 @@ def convert_predictions_to_tsv(predictions, dataset, output_folder,
             '''print(len(scores))
             print(np.array(scores).shape, np.array(boxes).shape, np.array(scores).dtype )
             print(type(scores), type(scores[0]),)'''
-            attrs_id = base64.b64encode(np.array(attr_labels)).decode()
-            attrs_conf = base64.b64encode(np.array(attr_scores, dtype=np.float32)).decode()
             num_boxes = len(boxes)
+            if attr:
+                attrs_id = base64.b64encode(np.array(attr_labels)).decode()
+                attrs_conf = base64.b64encode(np.array(attr_scores, dtype=np.float32)).decode()
+            else:
+                attrs_id = base64.b64encode(np.zeros(num_boxes, np.int64)).decode()
+                attrs_conf = base64.b64encode(np.zeros(num_boxes, np.float32)).decode()
+            
             boxes = base64.b64encode(np.array(boxes, dtype=np.float32)).decode()
             features = base64.b64encode(np.array(features, dtype=np.float32)).decode()
 
 
             #yield image_key, json.dumps({'objects': objects, 'relations':triplets})
             yield image_key, image_height, image_width, objects_id, object_conf, attrs_id, attrs_conf, num_boxes, boxes, features
-    tsv_writer(gen_rows(), os.path.join(output_folder, output_tsv_name))
+    tsv_writer(gen_rows(attr), os.path.join(output_folder, output_tsv_name))
 
 
 def inference(
@@ -241,6 +246,7 @@ def inference(
         save_predictions=False,
         skip_performance_eval=False,
         labelmap_file='',
+        attr=True,
 ):
     # convert to a torch.device for efficiency
     device = torch.device(device)
@@ -309,6 +315,7 @@ def inference(
             labelmap_file=labelmap_file,
             output_tsv_name=output_tsv_name,
             relation_on=cfg.MODEL.RELATION_ON,
+            attr=attr
         )
     
     if skip_performance_eval:

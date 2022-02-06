@@ -23,6 +23,7 @@ MODEL:
     ROI_ATTRIBUTE_HEAD:
       NUM_ATTRIBUTES: 525
       POSTPROCESS_ATTRIBUTES_THRESHOLD: 0.05
+      MAX_NUM_ATTR_PER_OBJ: 1
     ATTRIBUTE_ON: True
 INPUT:
     MIN_SIZE_TEST: 600
@@ -33,7 +34,7 @@ DATASETS:
 #    TEST: ("flickr30k/tsv/flickr30k.yaml",)
     LABELMAP_FILE: "./data/visualgenome/VG-SGG-dicts-vgoi6-clipped.json"
     TRAIN: ("visualgenome/train_vgoi6_clipped.yaml",)
-    TEST: ("train.yaml",)
+    TEST: ("test.yaml",)
     FACTORY_TRAIN: ("VGTSVDataset",)
     FACTORY_TEST: ("VGTSVDataset",)
 DATALOADER:
@@ -54,6 +55,6 @@ TEST:
     GATHER_ON_CPU: True
     IGNORE_BOX_REGRESSION: True
     OUTPUT_FEATURE: True
-OUTPUT_DIR: "./output/attr3636Mod1"
-DATA_DIR: "./data/img/test"
+OUTPUT_DIR: "./output/V1/attr3636VinVL"
+DATA_DIR: "./data/img/HMC"
 DISTRIBUTED_BACKEND: 'gloo'

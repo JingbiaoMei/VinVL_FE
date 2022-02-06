@@ -49,6 +49,7 @@ class GroupedBatchSampler(BatchSampler):
         # for example. if sampled_ids = [3, 1] and dataset_size = 5,
         # the order is [-1, 1, -1, 0, -1]
         order = torch.full((dataset_size,), -1, dtype=torch.int64)
+        print(sampled_ids)
         order[sampled_ids] = torch.arange(len(sampled_ids))
 
         # get a mask with the elements that were sampled

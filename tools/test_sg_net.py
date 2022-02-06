@@ -23,6 +23,7 @@ from maskrcnn_benchmark.utils.logger import setup_logger
 from maskrcnn_benchmark.utils.miscellaneous import mkdir
 
 
+
 def run_test(cfg, model, distributed, model_name):
     if distributed and hasattr(model, 'module'):
         model = model.module
@@ -70,6 +71,7 @@ def run_test(cfg, model, distributed, model_name):
             skip_performance_eval=cfg.TEST.SKIP_PERFORMANCE_EVAL,
             labelmap_file=labelmap_file,
             save_predictions=cfg.TEST.SAVE_PREDICTIONS,
+            attr=cfg.TEST.ATTR,
         )
 
         # renaming box_proposals metric to rpn_proposals if RPN_ONLY is True
@@ -112,6 +114,7 @@ def run_test(cfg, model, distributed, model_name):
                 labelmap_file=labelmap_file,
                 save_predictions=cfg.TEST.SAVE_PREDICTIONS,
                 eval_attributes=True,
+                attr=cfg.TEST.ATTR,
             )
 
             if results_attr and output_folder:
@@ -131,7 +134,7 @@ def run_test(cfg, model, distributed, model_name):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="PyTorch Object Detection Inference")
+    parser = argparse.ArgumentParser(description="PyTorch Object Detection 1")
     parser.add_argument(
         "--config-file",
         default="/private/home/fmassa/github/detectron.pytorch_v2/configs/e2e_faster_rcnn_R_50_C4_1x_caffe2.yaml",
