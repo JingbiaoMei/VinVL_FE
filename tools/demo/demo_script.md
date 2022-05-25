@@ -22,3 +22,23 @@ python tools/demo/demo_image.py --config_file sgg_configs/vg_vrd/rel_danfeiX_FPN
 On HMC:
 
 python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/MM/vinvl_attr3636.yaml --img_file demo/woman_fish.jpg --save_file output/woman_fish_attr36.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/01389.png --save_file output/01389_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/02584.png --save_file output/02584_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/98564.png --save_file output/98564_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/98567.png --save_file output/98567_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/04175.png --save_file output/04175_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 
+
+
+python ./tools/demo/demo_image.py --config_file sgg_configs/vgattr/HMC/vinvl_attr1010.yaml --img_file tools/mini_tsv/img_FB/02793.png --save_file output/02793_1010.obj.jpg MODEL.WEIGHT data/pretrained_model/vinvl_vg_x152c4.pth 

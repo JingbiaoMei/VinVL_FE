@@ -57,5 +57,5 @@ TEST:
     OUTPUT_FEATURE: True
     ATTR: True
 OUTPUT_DIR: "./output/MM/attr3636VinVL"
-DATA_DIR: "./tools/mini_tsv/data_MM"
+DATA_DIR: "./tools/mini_tsv/data_MM_Down"
 DISTRIBUTED_BACKEND: 'gloo'

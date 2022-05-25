@@ -6,7 +6,7 @@ import numpy as np
 
 def get_font_info(img_size):
     font = cv2.FONT_HERSHEY_SIMPLEX  # default font
-    ref = (img_size[0] + img_size[1]) / 2
+    ref = (img_size[0] + img_size[1]) / 2 * 1.5
     font_scale = ref / 1000
     font_thickness = int(max(ref / 400, 1))
     return font, font_scale, font_thickness
