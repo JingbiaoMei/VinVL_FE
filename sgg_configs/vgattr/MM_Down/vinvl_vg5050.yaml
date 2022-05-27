@@ -56,6 +56,6 @@ TEST:
     IGNORE_BOX_REGRESSION: True
     OUTPUT_FEATURE: True
     ATTR: False
-OUTPUT_DIR: "./output/MM/vg5050VinVL"
-DATA_DIR: "./tools/mini_tsv/data_MM"
+OUTPUT_DIR: "./output/MM_Down/vg5050VinVL"
+DATA_DIR: "./tools/mini_tsv/data_MM_Down"
 DISTRIBUTED_BACKEND: 'gloo'

@@ -1,0 +1,62 @@
+Loaded 0 images, time taken: 0.05
+Loaded 1000 images, time taken: 43.72
+Loaded 2000 images, time taken: 81.68
+Loaded 3000 images, time taken: 122.94
+Loaded 4000 images, time taken: 160.94
+Loaded 5000 images, time taken: 209.58
+Loaded 6000 images, time taken: 251.50
+Loaded 7000 images, time taken: 293.98
+Loaded 8000 images, time taken: 342.50
+Loaded 9000 images, time taken: 382.92
+Loaded 10000 images, time taken: 419.37
+Loaded 11000 images, time taken: 460.13
+Loaded 12000 images, time taken: 497.91
+Loaded 13000 images, time taken: 539.44
+Loaded 14000 images, time taken: 575.30
+Loaded 15000 images, time taken: 615.72
+Loaded 16000 images, time taken: 657.72
+Loaded 17000 images, time taken: 695.21
+Loaded 18000 images, time taken: 732.88
+Loaded 19000 images, time taken: 771.08
+Loaded 20000 images, time taken: 813.29
+Loaded 21000 images, time taken: 852.31
+Loaded 22000 images, time taken: 892.97
+Loaded 23000 images, time taken: 935.44
+Loaded 24000 images, time taken: 971.10
+Loaded 25000 images, time taken: 1008.31
+Loaded 26000 images, time taken: 1048.01
+Loaded 27000 images, time taken: 1092.93
+Loaded 28000 images, time taken: 1134.04
+Loaded 29000 images, time taken: 1170.32
+Loaded 30000 images, time taken: 1210.63
+Loaded 31000 images, time taken: 1257.25
+Loaded 32000 images, time taken: 1300.07
+Loaded 33000 images, time taken: 1340.02
+Loaded 34000 images, time taken: 1378.92
+Loaded 35000 images, time taken: 1420.16
+Loaded 36000 images, time taken: 1458.59
+Loaded 37000 images, time taken: 1500.70
+Loaded 38000 images, time taken: 1539.08
+Loaded 39000 images, time taken: 1581.04
+Loaded 40000 images, time taken: 1620.47
+Loaded 41000 images, time taken: 1659.03
+Loaded 42000 images, time taken: 1701.04
+Loaded 43000 images, time taken: 1745.80
+Loaded 44000 images, time taken: 1788.16
+Loaded 45000 images, time taken: 1828.01
+Loaded 46000 images, time taken: 1870.06
+Loaded 47000 images, time taken: 1908.66
+Loaded 48000 images, time taken: 1946.31
+Loaded 49000 images, time taken: 1987.80
+Loaded 50000 images, time taken: 2027.14
+Loaded 51000 images, time taken: 2064.54
+Loaded 52000 images, time taken: 2103.86
+Loaded 53000 images, time taken: 2144.23
+Loaded 54000 images, time taken: 2180.20
+Loaded 55000 images, time taken: 2220.07
+Loaded 56000 images, time taken: 2255.87
+Loaded 57000 images, time taken: 2298.09
+Loaded 58000 images, time taken: 2340.41
+Time taken to load images: 2378.207147836685
+All iamge loaded, started to write tsv
+0it [00:00, ?it/s]20767it [00:00, 207635.05it/s]44021it [00:00, 222272.60it/s]58958it [00:00, 222513.76it/s]
